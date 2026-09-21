@@ -6,28 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Portafolio Digital de Psicología — Andrea Medina Monterroza | UNAD</title>
     
-    <!-- Tipografías Editoriales Elegantes -->
+    <!-- Tipografías Editoriales e Institucionales -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Playfair+Display:ital,wght@0,500;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
 
     <style>
+        /* ==========================================================================
+           PALETA INSTITUCIONAL OFICIAL UNAD (Universidad Nacional Abierta y a Distancia)
+           ========================================================================== */
         :root {
-            --bg: #fbfaf7;
-            --surface: #ffffff;
-            --surface-subtle: #f4f2eb;
-            --border: #e0ded6;
-            --border-dark: #1b1b1b;
-            --text-main: #141414;
-            --text-body: #333333;
-            --text-muted: #666666;
-            --accent-burgundy: #7d1822;
-            --accent-navy: #0d1f40;
-            --accent-gold: #9e791b;
-            --sans: 'Libre Franklin', -apple-system, BlinkMacSystemFont, sans-serif;
+            --unad-azul: #004669;          /* Azul Primario UNAD */
+            --unad-azul-dark: #002d44;     /* Azul Marino Profundo */
+            --unad-azul-light: #006b9f;    /* Azul Celeste Institucional */
+            --unad-amarillo: #e7b200;      /* Amarillo Oro UNAD */
+            --unad-amarillo-light: #f7cb2f;/* Amarillo Cálido */
+            --unad-naranja: #e85d04;       /* Naranja Acento UNAD */
+            
+            --bg: #f4f7fa;                 /* Fondo institucional suave */
+            --surface: #ffffff;            /* Superficie blanca */
+            --surface-subtle: #edf3f8;     /* Superficie con tinte azul UNAD */
+            --border: #d2dee9;             /* Bordes suaves */
+            --border-unad: #004669;        /* Bordes destacados */
+            --text-main: #0c1e33;          /* Texto principal oscuro */
+            --text-body: #2c3e50;          /* Texto de lectura */
+            --text-muted: #52677d;         /* Texto secundario */
+            
+            --sans: 'Libre Franklin', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             --serif: 'Newsreader', Georgia, serif;
             --headline: 'Playfair Display', Georgia, serif;
-            --cinzel: 'Cinzel', serif;
         }
 
         *, *::before, *::after {
@@ -48,59 +55,105 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ─── CINTILLO INSTITUCIONAL ─── */
-        .academic-stripe {
-            background-color: var(--accent-navy);
-            color: #f7f5ed;
-            padding: 8px 24px;
+        /* ─── BARRA SUPERIOR INSTITUCIONAL UNAD ─── */
+        .unad-top-stripe {
+            background-color: var(--unad-azul-dark);
+            color: #ffffff;
+            padding: 10px 30px;
             font-family: var(--sans);
-            font-size: 11px;
+            font-size: 11.5px;
             font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+            letter-spacing: 0.06em;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 8px;
-            border-bottom: 2px solid var(--accent-gold);
+            gap: 10px;
+            border-bottom: 3px solid var(--unad-amarillo);
         }
 
-        .academic-stripe a {
-            color: #e0c885;
+        .unad-brand-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .unad-logo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: 800;
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            color: #ffffff;
+        }
+
+        .unad-dots {
+            display: inline-flex;
+            gap: 3px;
+        }
+
+        .unad-dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot-blue { background-color: var(--unad-azul-light); }
+        .dot-yellow { background-color: var(--unad-amarillo); }
+        .dot-orange { background-color: var(--unad-naranja); }
+
+        .unad-top-stripe a {
+            color: var(--unad-amarillo);
             text-decoration: none;
+            font-weight: 700;
             transition: color 0.2s;
         }
 
-        .academic-stripe a:hover {
+        .unad-top-stripe a:hover {
             color: #ffffff;
             text-decoration: underline;
         }
 
-        /* ─── CONTENEDOR CENTRAL ─── */
+        /* ─── CONTENEDOR DEL PORTAL ─── */
         .portal-wrapper {
-            max-width: 1160px;
+            max-width: 1180px;
             margin: 0 auto;
-            padding: 40px 24px 70px;
+            padding: 44px 24px 70px;
             flex: 1;
             width: 100%;
         }
 
-        /* ─── HERO / ENCABEZADO DEL PORTAL ─── */
+        /* ─── ENCABEZADO Y HERO CON IDENTIDAD UNAD ─── */
         .portal-header {
             text-align: center;
-            padding-bottom: 36px;
-            border-bottom: 3px double var(--border-dark);
+            padding-bottom: 34px;
+            border-bottom: 2px solid var(--border);
             margin-bottom: 44px;
+            position: relative;
         }
 
-        .portal-kicker {
+        .portal-header::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--unad-amarillo);
+            margin: 14px auto 0;
+            border-radius: 2px;
+        }
+
+        .portal-institution {
             font-family: var(--sans);
-            font-size: 11.5px;
+            font-size: 12px;
             font-weight: 800;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: var(--accent-burgundy);
+            color: var(--unad-azul);
             display: inline-block;
             margin-bottom: 10px;
         }
@@ -109,7 +162,7 @@
             font-family: var(--headline);
             font-size: clamp(34px, 5vw, 56px);
             font-weight: 900;
-            color: var(--text-main);
+            color: var(--unad-azul-dark);
             line-height: 1.1;
             letter-spacing: -0.01em;
             margin-bottom: 12px;
@@ -120,32 +173,32 @@
             font-style: italic;
             font-size: clamp(17px, 2.2vw, 21px);
             color: var(--text-muted);
-            max-width: 780px;
-            margin: 0 auto 18px;
+            max-width: 800px;
+            margin: 0 auto 20px;
             line-height: 1.45;
         }
 
-        .author-badge {
+        .author-card {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: var(--surface-subtle);
+            gap: 10px;
+            background: var(--surface);
             border: 1px solid var(--border);
-            padding: 6px 18px;
-            border-radius: 30px;
+            border-left: 4px solid var(--unad-azul);
+            padding: 8px 22px;
+            border-radius: 4px;
             font-family: var(--sans);
-            font-size: 12px;
+            font-size: 12.5px;
             color: var(--text-main);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
+            box-shadow: 0 2px 8px rgba(0, 70, 105, 0.05);
         }
 
-        .author-badge strong {
-            color: var(--accent-burgundy);
+        .author-card strong {
+            color: var(--unad-azul);
+            font-weight: 800;
         }
 
-        /* ─── GRID DE PROYECTOS PRINCIPALES ─── */
+        /* ─── GRID DE PROYECTOS ACADÉMICOS ─── */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -153,84 +206,93 @@
             margin-bottom: 50px;
         }
 
-        @media (max-width: 840px) {
+        @media (max-width: 860px) {
             .projects-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 28px;
             }
         }
 
         .project-card {
             background: var(--surface);
-            border: 1px solid var(--border-dark);
-            outline: 1px solid var(--border-dark);
-            outline-offset: 4px;
-            padding: 32px 30px;
+            border: 1px solid var(--border);
+            border-top: 5px solid var(--unad-azul);
+            border-radius: 6px;
+            padding: 34px 32px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-top-color 0.2s;
+            box-shadow: 0 4px 18px rgba(0, 45, 68, 0.06);
             position: relative;
         }
 
         .project-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+            box-shadow: 0 14px 32px rgba(0, 70, 105, 0.12);
+            border-top-color: var(--unad-amarillo);
+        }
+
+        .project-card.comic-accent {
+            border-top-color: var(--unad-naranja);
+        }
+
+        .project-card.comic-accent:hover {
+            border-top-color: var(--unad-amarillo);
         }
 
         .card-tag {
             font-family: var(--sans);
-            font-size: 10px;
+            font-size: 10.5px;
             font-weight: 800;
-            letter-spacing: 0.16em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
-            padding: 3px 9px;
+            padding: 4px 10px;
             display: inline-block;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             align-self: flex-start;
+            border-radius: 3px;
         }
 
         .card-tag.newspaper {
-            background-color: var(--text-main);
+            background-color: var(--unad-azul);
             color: #ffffff;
         }
 
         .card-tag.comic {
-            background-color: var(--accent-navy);
+            background-color: var(--unad-naranja);
             color: #ffffff;
-            border: 1px solid var(--accent-gold);
         }
 
         .card-title {
             font-family: var(--headline);
-            font-size: clamp(24px, 2.8vw, 30px);
-            font-weight: 700;
-            color: var(--text-main);
+            font-size: clamp(24px, 2.8vw, 32px);
+            font-weight: 800;
+            color: var(--unad-azul-dark);
             line-height: 1.2;
             margin-bottom: 12px;
         }
 
         .card-desc {
             font-size: 16px;
-            line-height: 1.55;
+            line-height: 1.6;
             color: var(--text-body);
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             flex: 1;
         }
 
-        /* Características destacadas dentro de la tarjeta */
         .card-highlights {
             list-style: none;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
-            padding: 12px 0;
-            margin-bottom: 24px;
+            padding: 14px 0;
+            margin-bottom: 26px;
             font-family: var(--sans);
             font-size: 12px;
             color: var(--text-muted);
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 7px;
         }
 
         .card-highlights li {
@@ -241,8 +303,9 @@
 
         .card-highlights li::before {
             content: "✦";
-            color: var(--accent-gold);
-            font-size: 10px;
+            color: var(--unad-amarillo);
+            font-size: 11px;
+            font-weight: 900;
         }
 
         .card-footer-actions {
@@ -254,7 +317,7 @@
         .btn-enter {
             flex: 1;
             min-width: 160px;
-            background-color: var(--text-main);
+            background-color: var(--unad-azul);
             color: #ffffff;
             font-family: var(--sans);
             font-size: 12px;
@@ -268,51 +331,83 @@
             justify-content: center;
             align-items: center;
             gap: 8px;
-            transition: background 0.15s ease;
+            border-radius: 4px;
+            transition: background-color 0.15s ease, transform 0.15s ease;
         }
 
         .btn-enter:hover {
-            background-color: var(--accent-burgundy);
+            background-color: var(--unad-azul-dark);
+            transform: translateY(-1px);
+        }
+
+        .project-card.comic-accent .btn-enter {
+            background-color: var(--unad-azul-dark);
+        }
+
+        .project-card.comic-accent .btn-enter:hover {
+            background-color: var(--unad-naranja);
         }
 
         .btn-secondary-action {
-            background-color: transparent;
-            border: 1px solid var(--border-dark);
-            color: var(--text-main);
+            background-color: var(--surface-subtle);
+            border: 1px solid var(--border);
+            color: var(--unad-azul-dark);
             font-family: var(--sans);
             font-size: 11px;
             font-weight: 700;
             letter-spacing: 0.06em;
             text-transform: uppercase;
-            padding: 12px 16px;
+            padding: 12px 18px;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            border-radius: 4px;
             transition: all 0.15s ease;
             text-decoration: none;
         }
 
         .btn-secondary-action:hover {
-            background: var(--text-main);
+            background: var(--unad-azul);
             color: #ffffff;
+            border-color: var(--unad-azul);
         }
 
-        /* ─── ESPACIO OFICIAL DE COMPARTIR Y DIFUSIÓN ─── */
+        /* ─── ESPACIO OFICIAL DE COMPARTIR Y ENTREGA ACADÉMICA ─── */
         .portal-share-box {
-            background: var(--surface-subtle);
-            border: 2px solid var(--border-dark);
-            padding: 32px 36px;
+            background: var(--surface);
+            border: 2px solid var(--unad-azul);
+            border-radius: 6px;
+            padding: 34px 38px;
             text-align: center;
             margin-top: 10px;
+            box-shadow: 0 6px 24px rgba(0, 70, 105, 0.08);
+            position: relative;
+        }
+
+        .share-box-tag {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--unad-amarillo);
+            color: var(--unad-azul-dark);
+            font-family: var(--sans);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            padding: 3px 14px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
         }
 
         .portal-share-box h3 {
             font-family: var(--headline);
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 6px;
+            font-size: 25px;
+            font-weight: 800;
+            color: var(--unad-azul-dark);
+            margin: 6px 0 6px;
         }
 
         .portal-share-box p {
@@ -325,15 +420,18 @@
         .share-row-input {
             display: flex;
             max-width: 680px;
-            margin: 0 auto 16px;
+            margin: 0 auto 18px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
         }
 
         .share-row-input input {
             flex: 1;
-            padding: 11px 16px;
+            padding: 12px 16px;
             font-family: var(--sans);
             font-size: 13.5px;
-            border: 1px solid var(--border-dark);
+            border: 1px solid var(--border);
             border-right: none;
             background: #ffffff;
             color: var(--text-main);
@@ -341,31 +439,33 @@
         }
 
         .btn-copy-portal {
-            background: var(--text-main);
+            background: var(--unad-azul);
             color: #ffffff;
-            border: 1px solid var(--border-dark);
+            border: 1px solid var(--unad-azul);
             font-family: var(--sans);
             font-size: 11.5px;
             font-weight: 800;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            padding: 11px 22px;
+            padding: 12px 24px;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 6px;
-            transition: background 0.15s;
+            transition: background-color 0.15s;
         }
 
         .btn-copy-portal:hover {
-            background: var(--accent-burgundy);
+            background: var(--unad-amarillo);
+            color: var(--unad-azul-dark);
+            border-color: var(--unad-amarillo);
         }
 
         .quick-share-buttons {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
 
         .chip-btn {
@@ -374,45 +474,51 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            padding: 8px 16px;
+            padding: 9px 18px;
             border: 1px solid var(--border);
-            background: #ffffff;
-            color: var(--text-main);
+            background: var(--surface-subtle);
+            color: var(--unad-azul-dark);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 6px;
             cursor: pointer;
+            border-radius: 4px;
             transition: all 0.15s;
         }
 
         .chip-btn:hover {
-            background: var(--text-main);
+            background: var(--unad-azul);
             color: #ffffff;
-            border-color: var(--text-main);
+            border-color: var(--unad-azul);
         }
 
-        /* ─── TOAST ─── */
+        .chip-btn.wa:hover {
+            background: #128c7e;
+            border-color: #128c7e;
+        }
+
+        /* ─── TOAST INTERACTIVO ─── */
         .toast-portal {
             position: fixed;
             top: 24px;
             left: 50%;
             transform: translateX(-50%) translateY(-100px);
-            background: var(--text-main);
+            background: var(--unad-azul-dark);
             color: #ffffff;
             font-family: var(--sans);
             font-size: 12.5px;
             font-weight: 700;
             letter-spacing: 0.06em;
             text-transform: uppercase;
-            padding: 12px 24px;
+            padding: 13px 26px;
             border-radius: 30px;
-            box-shadow: 0 10px 28px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 28px rgba(0, 45, 68, 0.35);
             z-index: 9999;
             opacity: 0;
             pointer-events: none;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 2px solid var(--unad-amarillo);
         }
 
         .toast-portal.show {
@@ -420,66 +526,77 @@
             opacity: 1;
         }
 
-        /* ─── FOOTER ─── */
+        /* ─── PIE INSTITUCIONAL ─── */
         .portal-footer {
             border-top: 1px solid var(--border);
             background: #ffffff;
-            padding: 24px 20px;
+            padding: 26px 20px;
             text-align: center;
             font-family: var(--sans);
-            font-size: 11.5px;
+            font-size: 12px;
             color: var(--text-muted);
-            letter-spacing: 0.04em;
+            letter-spacing: 0.03em;
+        }
+
+        .portal-footer strong {
+            color: var(--unad-azul);
         }
     </style>
 </head>
 
 <body>
 
-    <!-- BARRA INSTITUCIONAL SUPERIOR -->
-    <div class="academic-stripe">
-        <div>
-            <span>Universidad Nacional Abierta y a Distancia — UNAD</span> · 
-            <span>Escuela de Ciencias Sociales, Artes y Humanidades</span>
+    <!-- BARRA INSTITUCIONAL SUPERIOR UNAD -->
+    <header class="unad-top-stripe">
+        <div class="unad-brand-group">
+            <span class="unad-logo-badge">
+                <span class="unad-dots">
+                    <span class="dot-blue"></span>
+                    <span class="dot-yellow"></span>
+                    <span class="dot-orange"></span>
+                </span>
+                &nbsp;UNAD
+            </span>
+            <span>Universidad Nacional Abierta y a Distancia · Escuela de Ciencias Sociales, Artes y Humanidades (ECSAH)</span>
         </div>
         <div>
-            <span>Curso: Antecedentes de la Psicología (402537616)</span> · 
-            <span>Período Académico 2026</span>
+            <span>Programa de Psicología · Código Curso: <strong>402537616</strong></span>
         </div>
-    </div>
+    </header>
 
-    <!-- CONTENEDOR PRINCIPAL -->
+    <!-- CONTENEDOR PRINCIPAL DEL PORTAL -->
     <div class="portal-wrapper">
 
-        <!-- CABECERA DEL PORTAL -->
-        <header class="portal-header">
-            <span class="portal-kicker">Portal Académico Digital</span>
-            <h1 class="portal-title">Antecedentes de la Psicología</h1>
+        <!-- ENCABEZADO PRINCIPAL -->
+        <section class="portal-header">
+            <span class="portal-institution">Portal Académico Digital · Antecedentes de la Psicología</span>
+            <h1 class="portal-title">El Pensamiento Psicológico en Perspectiva</h1>
             <p class="portal-subtitle">
-                Espacio unificado de consulta y divulgación académica: investigación epistémica en formato periodístico clásico e historieta gráfica ilustrada.
+                Repositorio interactivo de consulta académica: monografía periodística de análisis epistémico e historieta gráfica ilustrada sobre el gran debate de la mente.
             </p>
-            <div class="author-badge">
-                <span>Investigación y Desarrollo:</span>
+            <div class="author-card">
+                <span>Desarrollado y presentado por:</span>
                 <strong>Andrea Carolina Medina Monterroza</strong>
+                <span>· Código: 402537616</span>
             </div>
-        </header>
+        </section>
 
-        <!-- SELECCIÓN DE PROYECTOS -->
-        <main class="projects-grid" aria-label="Proyectos disponibles">
+        <!-- SECCIÓN DE PROYECTOS DISPONIBLES (EXTENSIBLE PARA FUTURAS ENTREGAS) -->
+        <main class="projects-grid" aria-label="Proyectos disponibles en el portafolio">
 
-            <!-- PROYECTO 1: EL PERIÓDICO DIGITAL -->
+            <!-- PROYECTO 1: EL PERIÓDICO HISTÓRICO DIGITAL -->
             <article class="project-card">
                 <div>
-                    <span class="card-tag newspaper">📰 Periódico Digital Histórico</span>
+                    <span class="card-tag newspaper">📰 Periódico Histórico Digital</span>
                     <h2 class="card-title">El Cronista del Alma</h2>
                     <p class="card-desc">
-                        Monografía exhaustiva diseñada bajo los cánones de la prensa clásica internacional (*The New York Times*). Analiza la génesis de la psicología en el cruce epistemológico entre las ciencias sociales (filosofía griega y teoría afectiva) y las ciencias naturales (medicina hipocrática y fisiología).
+                        Investigación monográfica en formato de prensa clásica internacional (*The New York Times*). Analiza la emergencia histórica de la psicología en la encrucijada entre las ciencias sociales (filosofía griega y afectividad) y las ciencias naturales (medicina hipocrática y biología).
                     </p>
                     <ul class="card-highlights">
-                        <li>Titular principal y dossier de pensadores precientíficos</li>
-                        <li>Análisis de Hipócrates, Platón, Aristóteles, Descartes y Locke</li>
-                        <li>Línea de tiempo cronológica (~460 a.C. a 1879)</li>
-                        <li>Reflexión editorial y referencias académicas APA 7.ª ed.</li>
+                        <li>Dossier biográfico: Hipócrates, Platón, Aristóteles, Descartes y Locke</li>
+                        <li>Tres artículos de fondo sobre epistemología, afectos y medicina</li>
+                        <li>Línea de tiempo cronológica precientífica (~460 a.C. – 1879)</li>
+                        <li>Reflexión editorial institucional y fuentes en normas APA 7.ª ed.</li>
                     </ul>
                 </div>
                 <div class="card-footer-actions">
@@ -492,19 +609,19 @@
                 </div>
             </article>
 
-            <!-- PROYECTO 2: LA HISTORIETA KANT VS HUME -->
-            <article class="project-card">
+            <!-- PROYECTO 2: LA HISTORIETA GRÁFICA KANT VS HUME -->
+            <article class="project-card comic-accent">
                 <div>
                     <span class="card-tag comic">🎨 Historieta Gráfica Ilustrada</span>
                     <h2 class="card-title">Kant &amp; Hume: El Gran Debate</h2>
                     <p class="card-desc">
-                        Cómic filosófico narrativo estructurado en 7 paneles interactivos. Escenifica el choque dialéctico entre el empirismo de David Hume y el idealismo trascendental de Immanuel Kant sobre el origen del conocimiento y la naturaleza de la mente.
+                        Cómic filosófico en 7 paneles interactivos a todo color. Escenifica el encuentro dialéctico entre el empirismo de David Hume y el idealismo trascendental de Immanuel Kant en torno al origen de las ideas, el despertar del sueño dogmático y los límites del conocimiento.
                     </p>
                     <ul class="card-highlights">
-                        <li>Guion pedagógico con diálogos basados en fuentes directas</li>
-                        <li>Ilustraciones vectoriales de Kant y Hume con viñetas temáticas</li>
-                        <li>Explicación del despertar del "sueño dogmático"</li>
-                        <li>Glosario conceptual epistemológico y ficha técnica UNAD</li>
+                        <li>Guion pedagógico con citas textuales y debate de ideas</li>
+                        <li>Ilustraciones vectoriales de época con viñetas secuenciales</li>
+                        <li>Conceptos clave: a priori, a posteriori, impresiones y causalidad</li>
+                        <li>Ficha técnica académica y cuadro de conclusiones UNAD</li>
                     </ul>
                 </div>
                 <div class="card-footer-actions">
@@ -519,11 +636,12 @@
 
         </main>
 
-        <!-- ESPACIO UNIFICADO PARA COMPARTIR Y ENTREGA -->
-        <section class="portal-share-box" aria-label="Espacio de difusión oficial">
-            <h3>Espacio de Difusión y Entrega Académica</h3>
+        <!-- ESPACIO DE COMPARTIR Y ENTREGA UNIFICADO -->
+        <section class="portal-share-box" aria-label="Espacio de difusión y entrega oficial">
+            <span class="share-box-tag">ENTREGA ACADÉMICA OFICIAL</span>
+            <h3>Espacio de Enlace y Difusión del Portafolio</h3>
             <p>
-                Copia el enlace principal del portal para compartir ambos trabajos de manera conjunta en la plataforma institucional o con la comunidad académica:
+                Copia el enlace principal del portal para presentarlo en el entorno de evaluación de la UNAD o compartirlo con docentes y compañeros:
             </p>
             <div class="share-row-input">
                 <input type="text" id="main-share-input" readonly value="" aria-label="Enlace del portal académico">
@@ -532,7 +650,7 @@
                 </button>
             </div>
             <div class="quick-share-buttons">
-                <a id="btn-wa-portal" href="#" target="_blank" class="chip-btn" title="Compartir vía WhatsApp">
+                <a id="btn-wa-portal" href="#" target="_blank" class="chip-btn wa" title="Compartir vía WhatsApp">
                     <span>💬 Compartir por WhatsApp</span>
                 </a>
                 <a id="btn-mail-portal" href="#" class="chip-btn" title="Enviar por Correo">
@@ -546,10 +664,11 @@
 
     </div>
 
-    <!-- PIE DE PÁGINA -->
+    <!-- PIE INSTITUCIONAL -->
     <footer class="portal-footer">
         <p>
-            Portafolio Académico Digital de <strong>Andrea Carolina Medina Monterroza</strong> · Código: 402537616 · Curso: Antecedentes de la Psicología · Universidad Nacional Abierta y a Distancia (UNAD) · 2026.
+            Portafolio Académico Digital elaborado por <strong>Andrea Carolina Medina Monterroza</strong> · Código de Estudiante: <strong>402537616</strong><br>
+            Curso: <strong>Antecedentes de la Psicología</strong> · Universidad Nacional Abierta y a Distancia (UNAD) · 2026.
         </p>
     </footer>
 
@@ -558,7 +677,7 @@
         ✓ ¡Enlace copiado al portapapeles!
     </div>
 
-    <!-- LÓGICA DE COMPARTIR -->
+    <!-- SCRIPT DE NAVEGACIÓN Y COPIADO -->
     <script>
         function getBaseUrl() {
             if (window.location.protocol === 'file:') {
@@ -615,14 +734,14 @@
 
             const btnWa = document.getElementById('btn-wa-portal');
             if (btnWa) {
-                const msg = encodeURIComponent(`Te comparto el Portafolio de Antecedentes de la Psicología por Andrea Medina Monterroza (UNAD): ${portalUrl}`);
+                const msg = encodeURIComponent(`Te comparto el Portafolio de Antecedentes de la Psicología (UNAD) por Andrea Medina Monterroza: ${portalUrl}`);
                 btnWa.href = `https://api.whatsapp.com/send?text=${msg}`;
             }
 
             const btnMail = document.getElementById('btn-mail-portal');
             if (btnMail) {
-                const subject = encodeURIComponent('Portafolio Académico: Antecedentes de la Psicología (UNAD)');
-                const body = encodeURIComponent(`Hola,\n\nTe comparto el portafolio digital de Antecedentes de la Psicología desarrollado por Andrea Carolina Medina Monterroza para la UNAD:\n\n${portalUrl}\n\nIncluye:\n- El Periódico Histórico Digital: El Cronista del Alma\n- La Historieta Ilustrada: Kant vs Hume\n\nSaludos.`);
+                const subject = encodeURIComponent('Portafolio Académico UNAD: Antecedentes de la Psicología');
+                const body = encodeURIComponent(`Hola,\n\nTe comparto el portafolio digital de Antecedentes de la Psicología desarrollado por Andrea Carolina Medina Monterroza para la UNAD:\n\n${portalUrl}\n\nIncluye:\n1. El Periódico Digital: El Cronista del Alma\n2. La Historieta Ilustrada: Kant vs Hume\n\nSaludos.`);
                 btnMail.href = `mailto:?subject=${subject}&body=${body}`;
             }
         });

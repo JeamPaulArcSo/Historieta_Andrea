@@ -17,17 +17,24 @@
            ========================================================================== */
         
         :root {
-            --paper: #fcfbf9;
-            --paper-subtle: #f4f3ef;
-            --paper-dark: #e8e6df;
-            --ink-black: #111111;
-            --ink-dark: #222222;
-            --ink-body: #2b2b2b;
-            --ink-muted: #555555;
-            --ink-faint: #767676;
-            --rule-black: #111111;
-            --rule-hairline: #d6d4ce;
-            --accent-crimson: #841820;
+            /* ─── PALETA INSTITUCIONAL UNAD ADAPTADA A LA PRENSA CLÁSICA ─── */
+            --unad-azul: #004669;
+            --unad-azul-dark: #002d44;
+            --unad-azul-profundo: #091a2e;
+            --unad-amarillo: #e7b200;
+            --unad-naranja: #e85d04;
+
+            --paper: #ffffff;
+            --paper-subtle: #f5f8fb;
+            --paper-dark: #e5ebf2;
+            --ink-black: #0c1c2e;
+            --ink-dark: #19293d;
+            --ink-body: #243447;
+            --ink-muted: #53677e;
+            --ink-faint: #788c9f;
+            --rule-black: #004669;
+            --rule-hairline: #d8e2ed;
+            --accent-crimson: #004669;
             --sans: 'Libre Franklin', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             --serif: 'Newsreader', Georgia, Cambria, serif;
             --headline: 'Playfair Display', Georgia, "Times New Roman", serif;
@@ -41,7 +48,7 @@
         }
 
         html {
-            background-color: #eae7df;
+            background-color: #eaf0f6;
             color: var(--ink-dark);
             font-size: 16px;
             text-rendering: optimizeLegibility;
@@ -57,8 +64,8 @@
             margin: 24px auto;
             max-width: 1240px;
             padding: 0 40px 60px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08), 0 0 1px rgba(0, 0, 0, 0.15);
-            border-top: 4px solid var(--ink-black);
+            box-shadow: 0 4px 30px rgba(0, 70, 105, 0.08), 0 0 1px rgba(0, 70, 105, 0.15);
+            border-top: 5px solid var(--unad-azul);
         }
 
         @media (max-width: 1280px) {
@@ -71,32 +78,38 @@
             }
         }
 
-        /* ─── ENCABEZADO SUPERIOR / BARRA INSTITUCIONAL ─── */
+        /* ─── ENCABEZADO SUPERIOR / BARRA INSTITUCIONAL UNAD ─── */
         .top-utility-bar {
+            background-color: var(--unad-azul-dark);
+            color: #ffffff;
+            padding: 10px 20px;
+            font-family: var(--sans);
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            border-bottom: 2px solid var(--unad-amarillo);
+            font-weight: 600;
+            border-radius: 4px;
+            margin-top: 14px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0 8px;
-            font-family: var(--sans);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--ink-muted);
-            border-bottom: 1px solid var(--rule-hairline);
-            font-weight: 500;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .top-utility-bar a {
-            color: var(--accent-crimson);
+            color: var(--unad-amarillo);
             text-decoration: none;
             font-weight: 700;
             display: inline-flex;
             align-items: center;
             gap: 4px;
-            transition: opacity 0.2s;
+            transition: color 0.2s;
         }
 
         .top-utility-bar a:hover {
+            color: #ffffff;
             text-decoration: underline;
         }
 
@@ -268,7 +281,7 @@
             font-weight: 800;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: var(--accent-crimson);
+            color: var(--unad-azul);
             margin-bottom: 12px;
             position: relative;
         }
@@ -276,10 +289,11 @@
         .lead-kicker::after {
             content: '';
             display: block;
-            width: 32px;
-            height: 2px;
-            background-color: var(--accent-crimson);
+            width: 40px;
+            height: 3px;
+            background-color: var(--unad-amarillo);
             margin: 4px auto 0;
+            border-radius: 2px;
         }
 
         .main-title {
@@ -453,18 +467,20 @@
 
         .figure-discipline.social {
             background-color: transparent;
-            color: var(--ink-black);
+            color: var(--unad-azul);
+            border-color: var(--unad-azul);
         }
 
         .figure-discipline.natural {
-            background-color: var(--ink-black);
-            color: var(--paper);
+            background-color: var(--unad-azul);
+            color: #ffffff;
+            border-color: var(--unad-azul);
         }
 
         .figure-discipline.both {
-            background-color: var(--accent-crimson);
-            border-color: var(--accent-crimson);
-            color: #fff;
+            background-color: var(--unad-amarillo);
+            border-color: var(--unad-amarillo);
+            color: var(--unad-azul-dark);
         }
 
         .figure-desc {
@@ -531,7 +547,7 @@
             font-weight: 800;
             letter-spacing: 0.14em;
             text-transform: uppercase;
-            color: var(--accent-crimson);
+            color: var(--unad-naranja);
             margin-bottom: 8px;
             display: block;
         }
@@ -576,8 +592,8 @@
             margin: 50px auto;
             text-align: center;
             padding: 28px 40px;
-            border-top: 2px solid var(--ink-black);
-            border-bottom: 2px solid var(--ink-black);
+            border-top: 2px solid var(--unad-azul);
+            border-bottom: 2px solid var(--unad-azul);
             position: relative;
         }
 
@@ -589,8 +605,8 @@
             position: absolute;
             top: 20px;
             left: 10px;
-            color: var(--ink-black);
-            opacity: 0.15;
+            color: var(--unad-amarillo);
+            opacity: 0.55;
         }
 
         .editorial-pullquote blockquote {
@@ -664,7 +680,7 @@
         }
 
         .timeline-milestone {
-            border-top: 3px solid var(--ink-black);
+            border-top: 3px solid var(--unad-azul);
             padding-top: 12px;
             font-family: var(--sans);
             position: relative;
@@ -674,7 +690,7 @@
             font-family: var(--headline);
             font-size: 18px;
             font-weight: 900;
-            color: var(--accent-crimson);
+            color: var(--unad-azul);
             margin-bottom: 4px;
         }
 
@@ -748,7 +764,7 @@
 
         /* ─── PÁGINA EDITORIAL & FIRMA INSTITUCIONAL ─── */
         .editorial-section {
-            border: 2px solid var(--ink-black);
+            border: 2px solid var(--unad-azul);
             padding: 36px 40px;
             margin-bottom: 40px;
             background: #ffffff;
@@ -766,7 +782,7 @@
             font-size: 11px;
             font-weight: 800;
             letter-spacing: 0.18em;
-            color: var(--accent-crimson);
+            color: var(--unad-naranja);
         }
 
         .editorial-section h2 {
@@ -861,7 +877,7 @@
             position: fixed;
             bottom: 24px;
             right: 24px;
-            background-color: var(--ink-black);
+            background-color: var(--unad-azul-dark);
             color: #ffffff;
             font-family: var(--sans);
             font-size: 12px;
@@ -871,16 +887,17 @@
             padding: 12px 20px;
             text-decoration: none;
             border-radius: 4px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 4px 16px rgba(0, 70, 105, 0.35);
             display: flex;
             align-items: center;
             gap: 8px;
             z-index: 1000;
+            border-left: 3px solid var(--unad-amarillo);
             transition: transform 0.2s, background-color 0.2s;
         }
 
         .supplement-pill:hover {
-            background-color: var(--accent-crimson);
+            background-color: var(--unad-azul);
             transform: translateY(-2px);
         }
 
@@ -941,12 +958,12 @@
         }
 
         .nyt-btn.secondary {
-            border-color: var(--accent-crimson);
-            color: var(--accent-crimson);
+            border-color: var(--unad-azul);
+            color: var(--unad-azul);
         }
 
         .nyt-btn.secondary:hover {
-            background: var(--accent-crimson);
+            background: var(--unad-azul);
             color: #ffffff;
         }
 
@@ -981,7 +998,7 @@
         /* ─── CAJA / HUB OFICIAL PARA COMPARTIR ─── */
         .share-hub-card {
             background: var(--paper-subtle);
-            border: 2px solid var(--ink-black);
+            border: 2px solid var(--unad-azul);
             padding: 28px 32px;
             margin: 40px 0 30px;
             text-align: center;
@@ -993,7 +1010,7 @@
             font-weight: 800;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: var(--accent-crimson);
+            color: var(--unad-naranja);
             margin-bottom: 6px;
             display: inline-block;
         }
@@ -1033,9 +1050,9 @@
         }
 
         .btn-copy-main {
-            background: var(--ink-black);
+            background: var(--unad-azul);
             color: #ffffff;
-            border: 1px solid var(--ink-black);
+            border: 1px solid var(--unad-azul);
             font-family: var(--sans);
             font-size: 11px;
             font-weight: 800;
@@ -1050,8 +1067,8 @@
         }
 
         .btn-copy-main:hover {
-            background: var(--accent-crimson);
-            border-color: var(--accent-crimson);
+            background: var(--unad-azul-dark);
+            border-color: var(--unad-azul-dark);
         }
 
         .share-buttons-row {

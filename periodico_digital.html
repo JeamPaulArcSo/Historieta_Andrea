@@ -872,32 +872,62 @@
             letter-spacing: 0.04em;
         }
 
-        /* ─── BOTÓN DE ENLACE FLOTANTE A LA HISTORIETA ─── */
-        .supplement-pill {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
+        /* ─── BANNER EDITORIAL DE ENLACE A LA HISTORIETA (AL FINAL) ─── */
+        .supplement-banner-end {
             background-color: var(--unad-azul-dark);
+            border-top: 4px solid var(--unad-amarillo);
+            border-bottom: 4px solid var(--unad-naranja);
+            border-radius: 4px;
+            padding: 24px 28px;
+            margin: 36px 0 26px;
             color: #ffffff;
-            font-family: var(--sans);
-            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            box-shadow: 0 4px 18px rgba(0, 45, 68, 0.12);
+        }
+
+        .supplement-banner-end h3 {
+            font-family: var(--headline);
+            font-size: 22px;
             font-weight: 700;
-            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .supplement-banner-end p {
+            font-family: var(--serif);
+            font-size: 15px;
+            color: #dce7f2;
+            margin: 0;
+            max-width: 650px;
+            line-height: 1.45;
+        }
+
+        .supplement-banner-btn {
+            background-color: var(--unad-amarillo);
+            color: var(--unad-azul-dark);
+            font-family: var(--sans);
+            font-size: 11.5px;
+            font-weight: 800;
             letter-spacing: 0.08em;
+            text-transform: uppercase;
             padding: 12px 20px;
             text-decoration: none;
             border-radius: 4px;
-            box-shadow: 0 4px 16px rgba(0, 70, 105, 0.35);
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
-            z-index: 1000;
-            border-left: 3px solid var(--unad-amarillo);
-            transition: transform 0.2s, background-color 0.2s;
+            transition: all 0.15s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            white-space: nowrap;
         }
 
-        .supplement-pill:hover {
-            background-color: var(--unad-azul);
+        .supplement-banner-btn:hover {
+            background-color: #ffffff;
+            color: var(--unad-azul-dark);
             transform: translateY(-2px);
         }
 
@@ -1542,14 +1572,20 @@
                 border-radius: 4px;
             }
 
-            /* Botón Flotante Móvil */
-            .supplement-pill {
-                bottom: 12px;
-                right: 12px;
-                padding: 8px 12px;
-                font-size: 10.5px;
-                border-radius: 20px;
-                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+            /* Banner de la Historieta Móvil */
+            .supplement-banner-end {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 20px 16px;
+                text-align: left;
+                gap: 14px;
+                margin: 28px 0 20px;
+            }
+
+            .supplement-banner-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 12px;
             }
 
             /* Pie de Página / Referencias */
@@ -1595,7 +1631,7 @@
                 padding: 0;
                 max-width: 100%;
             }
-            .supplement-pill, .top-utility-bar a, .nyt-share-bar, .share-hub-card, .toast-alert {
+            .top-utility-bar a, .nyt-share-bar, .share-hub-card, .toast-alert {
                 display: none !important;
             }
         }
@@ -1660,6 +1696,7 @@
             <a href="#analisis-dual">Ciencia Social vs Natural</a>
             <a href="#editorial">Editorial</a>
             <a href="#referencias">Bibliografía APA</a>
+            <a href="historieta_kant_hume.html" style="color: var(--unad-naranja); font-weight: 800;" title="Abrir Historieta Gráfica">🎨 Historieta Ilustrada ↗</a>
         </nav>
     </header>
 
@@ -1993,6 +2030,22 @@
             </div>
         </section>
 
+        <!-- ACCESO FINAL AL SUPLEMENTO: HISTORIETA ILUSTRADA KANT VS HUME -->
+        <section class="supplement-banner-end">
+            <div>
+                <span style="display: inline-block; font-family: var(--sans); font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--unad-amarillo); margin-bottom: 4px;">
+                    ✦ Proyecto Complementario · UNAD
+                </span>
+                <h3>🎨 Suplemento Gráfico: Historieta Kant vs. Hume</h3>
+                <p>
+                    Continúa el recorrido con el debate gráfico ilustrado entre Immanuel Kant y David Hume sobre el empirismo, el apriorismo y las bases epistemológicas de la mente humana.
+                </p>
+            </div>
+            <a href="historieta_kant_hume.html" class="supplement-banner-btn" title="Explorar la Historieta de Kant y Hume">
+                <span>Leer Historieta Ilustrada</span> ↗
+            </a>
+        </section>
+
         <!-- REFERENCIAS BIBLIOGRÁFICAS EN FORMATO APA 7 -->
         <footer id="referencias" class="newspaper-footer">
             <h4>Fuentes Documentales y Referencias Académicas (Normas APA 7.ª Edición)</h4>
@@ -2017,11 +2070,6 @@
             </div>
         </footer>
     </main>
-
-    <!-- ACCESO RÁPIDO AL SUPLEMENTO: HISTORIETA KANT VS HUME -->
-    <a href="historieta_kant_hume.html" class="supplement-pill" title="Explorar la Historieta de Kant y Hume">
-        <span>📖 Suplemento: Historieta Kant vs Hume</span>
-    </a>
 
     <!-- NOTIFICACIÓN TOAST -->
     <div id="toast-copiado" class="toast-alert" role="alert" aria-live="polite">

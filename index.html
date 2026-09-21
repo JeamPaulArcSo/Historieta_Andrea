@@ -1,11 +1,632 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=periodico_digital.html" />
-  <title>El Cronista del Alma — Periódico Histórico Digital</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Portafolio Digital de Psicología — Andrea Medina Monterroza | UNAD</title>
+    
+    <!-- Tipografías Editoriales Elegantes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #fbfaf7;
+            --surface: #ffffff;
+            --surface-subtle: #f4f2eb;
+            --border: #e0ded6;
+            --border-dark: #1b1b1b;
+            --text-main: #141414;
+            --text-body: #333333;
+            --text-muted: #666666;
+            --accent-burgundy: #7d1822;
+            --accent-navy: #0d1f40;
+            --accent-gold: #9e791b;
+            --sans: 'Libre Franklin', -apple-system, BlinkMacSystemFont, sans-serif;
+            --serif: 'Newsreader', Georgia, serif;
+            --headline: 'Playfair Display', Georgia, serif;
+            --cinzel: 'Cinzel', serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-body);
+            font-family: var(--serif);
+            font-size: 17px;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── CINTILLO INSTITUCIONAL ─── */
+        .academic-stripe {
+            background-color: var(--accent-navy);
+            color: #f7f5ed;
+            padding: 8px 24px;
+            font-family: var(--sans);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .academic-stripe a {
+            color: #e0c885;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .academic-stripe a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* ─── CONTENEDOR CENTRAL ─── */
+        .portal-wrapper {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 40px 24px 70px;
+            flex: 1;
+            width: 100%;
+        }
+
+        /* ─── HERO / ENCABEZADO DEL PORTAL ─── */
+        .portal-header {
+            text-align: center;
+            padding-bottom: 36px;
+            border-bottom: 3px double var(--border-dark);
+            margin-bottom: 44px;
+        }
+
+        .portal-kicker {
+            font-family: var(--sans);
+            font-size: 11.5px;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent-burgundy);
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .portal-title {
+            font-family: var(--headline);
+            font-size: clamp(34px, 5vw, 56px);
+            font-weight: 900;
+            color: var(--text-main);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            margin-bottom: 12px;
+        }
+
+        .portal-subtitle {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: clamp(17px, 2.2vw, 21px);
+            color: var(--text-muted);
+            max-width: 780px;
+            margin: 0 auto 18px;
+            line-height: 1.45;
+        }
+
+        .author-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--surface-subtle);
+            border: 1px solid var(--border);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-family: var(--sans);
+            font-size: 12px;
+            color: var(--text-main);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .author-badge strong {
+            color: var(--accent-burgundy);
+        }
+
+        /* ─── GRID DE PROYECTOS PRINCIPALES ─── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 36px;
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 840px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border-dark);
+            outline: 1px solid var(--border-dark);
+            outline-offset: 4px;
+            padding: 32px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+        }
+
+        .card-tag {
+            font-family: var(--sans);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            padding: 3px 9px;
+            display: inline-block;
+            margin-bottom: 14px;
+            align-self: flex-start;
+        }
+
+        .card-tag.newspaper {
+            background-color: var(--text-main);
+            color: #ffffff;
+        }
+
+        .card-tag.comic {
+            background-color: var(--accent-navy);
+            color: #ffffff;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .card-title {
+            font-family: var(--headline);
+            font-size: clamp(24px, 2.8vw, 30px);
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .card-desc {
+            font-size: 16px;
+            line-height: 1.55;
+            color: var(--text-body);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        /* Características destacadas dentro de la tarjeta */
+        .card-highlights {
+            list-style: none;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+            margin-bottom: 24px;
+            font-family: var(--sans);
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .card-highlights li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-highlights li::before {
+            content: "✦";
+            color: var(--accent-gold);
+            font-size: 10px;
+        }
+
+        .card-footer-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-enter {
+            flex: 1;
+            min-width: 160px;
+            background-color: var(--text-main);
+            color: #ffffff;
+            font-family: var(--sans);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 13px 20px;
+            text-decoration: none;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.15s ease;
+        }
+
+        .btn-enter:hover {
+            background-color: var(--accent-burgundy);
+        }
+
+        .btn-secondary-action {
+            background-color: transparent;
+            border: 1px solid var(--border-dark);
+            color: var(--text-main);
+            font-family: var(--sans);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 12px 16px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
+            text-decoration: none;
+        }
+
+        .btn-secondary-action:hover {
+            background: var(--text-main);
+            color: #ffffff;
+        }
+
+        /* ─── ESPACIO OFICIAL DE COMPARTIR Y DIFUSIÓN ─── */
+        .portal-share-box {
+            background: var(--surface-subtle);
+            border: 2px solid var(--border-dark);
+            padding: 32px 36px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .portal-share-box h3 {
+            font-family: var(--headline);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .portal-share-box p {
+            font-family: var(--serif);
+            font-size: 15.5px;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+
+        .share-row-input {
+            display: flex;
+            max-width: 680px;
+            margin: 0 auto 16px;
+        }
+
+        .share-row-input input {
+            flex: 1;
+            padding: 11px 16px;
+            font-family: var(--sans);
+            font-size: 13.5px;
+            border: 1px solid var(--border-dark);
+            border-right: none;
+            background: #ffffff;
+            color: var(--text-main);
+            outline: none;
+        }
+
+        .btn-copy-portal {
+            background: var(--text-main);
+            color: #ffffff;
+            border: 1px solid var(--border-dark);
+            font-family: var(--sans);
+            font-size: 11.5px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 11px 22px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.15s;
+        }
+
+        .btn-copy-portal:hover {
+            background: var(--accent-burgundy);
+        }
+
+        .quick-share-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .chip-btn {
+            font-family: var(--sans);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            background: #ffffff;
+            color: var(--text-main);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .chip-btn:hover {
+            background: var(--text-main);
+            color: #ffffff;
+            border-color: var(--text-main);
+        }
+
+        /* ─── TOAST ─── */
+        .toast-portal {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: var(--text-main);
+            color: #ffffff;
+            font-family: var(--sans);
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 12px 24px;
+            border-radius: 30px;
+            box-shadow: 0 10px 28px rgba(0,0,0,0.3);
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .toast-portal.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        /* ─── FOOTER ─── */
+        .portal-footer {
+            border-top: 1px solid var(--border);
+            background: #ffffff;
+            padding: 24px 20px;
+            text-align: center;
+            font-family: var(--sans);
+            font-size: 11.5px;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+        }
+    </style>
 </head>
+
 <body>
-  <p>Redirigiendo a El Cronista del Alma... <a href="periodico_digital.html">Haz clic aquí si no eres redirigido automáticamente.</a></p>
+
+    <!-- BARRA INSTITUCIONAL SUPERIOR -->
+    <div class="academic-stripe">
+        <div>
+            <span>Universidad Nacional Abierta y a Distancia — UNAD</span> · 
+            <span>Escuela de Ciencias Sociales, Artes y Humanidades</span>
+        </div>
+        <div>
+            <span>Curso: Antecedentes de la Psicología (402537616)</span> · 
+            <span>Período Académico 2026</span>
+        </div>
+    </div>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="portal-wrapper">
+
+        <!-- CABECERA DEL PORTAL -->
+        <header class="portal-header">
+            <span class="portal-kicker">Portal Académico Digital</span>
+            <h1 class="portal-title">Antecedentes de la Psicología</h1>
+            <p class="portal-subtitle">
+                Espacio unificado de consulta y divulgación académica: investigación epistémica en formato periodístico clásico e historieta gráfica ilustrada.
+            </p>
+            <div class="author-badge">
+                <span>Investigación y Desarrollo:</span>
+                <strong>Andrea Carolina Medina Monterroza</strong>
+            </div>
+        </header>
+
+        <!-- SELECCIÓN DE PROYECTOS -->
+        <main class="projects-grid" aria-label="Proyectos disponibles">
+
+            <!-- PROYECTO 1: EL PERIÓDICO DIGITAL -->
+            <article class="project-card">
+                <div>
+                    <span class="card-tag newspaper">📰 Periódico Digital Histórico</span>
+                    <h2 class="card-title">El Cronista del Alma</h2>
+                    <p class="card-desc">
+                        Monografía exhaustiva diseñada bajo los cánones de la prensa clásica internacional (*The New York Times*). Analiza la génesis de la psicología en el cruce epistemológico entre las ciencias sociales (filosofía griega y teoría afectiva) y las ciencias naturales (medicina hipocrática y fisiología).
+                    </p>
+                    <ul class="card-highlights">
+                        <li>Titular principal y dossier de pensadores precientíficos</li>
+                        <li>Análisis de Hipócrates, Platón, Aristóteles, Descartes y Locke</li>
+                        <li>Línea de tiempo cronológica (~460 a.C. a 1879)</li>
+                        <li>Reflexión editorial y referencias académicas APA 7.ª ed.</li>
+                    </ul>
+                </div>
+                <div class="card-footer-actions">
+                    <a href="periodico_digital.html" class="btn-enter" title="Abrir El Cronista del Alma">
+                        <span>Leer Periódico ↗</span>
+                    </a>
+                    <button type="button" class="btn-secondary-action" onclick="copiarLinkEspecifico('periodico_digital.html', 'Periódico Digital')" title="Copiar enlace directo">
+                        <span>Copiar Link</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- PROYECTO 2: LA HISTORIETA KANT VS HUME -->
+            <article class="project-card">
+                <div>
+                    <span class="card-tag comic">🎨 Historieta Gráfica Ilustrada</span>
+                    <h2 class="card-title">Kant &amp; Hume: El Gran Debate</h2>
+                    <p class="card-desc">
+                        Cómic filosófico narrativo estructurado en 7 paneles interactivos. Escenifica el choque dialéctico entre el empirismo de David Hume y el idealismo trascendental de Immanuel Kant sobre el origen del conocimiento y la naturaleza de la mente.
+                    </p>
+                    <ul class="card-highlights">
+                        <li>Guion pedagógico con diálogos basados en fuentes directas</li>
+                        <li>Ilustraciones vectoriales de Kant y Hume con viñetas temáticas</li>
+                        <li>Explicación del despertar del "sueño dogmático"</li>
+                        <li>Glosario conceptual epistemológico y ficha técnica UNAD</li>
+                    </ul>
+                </div>
+                <div class="card-footer-actions">
+                    <a href="historieta_kant_hume.html" class="btn-enter" title="Abrir Historieta Kant vs Hume">
+                        <span>Ver Historieta ↗</span>
+                    </a>
+                    <button type="button" class="btn-secondary-action" onclick="copiarLinkEspecifico('historieta_kant_hume.html', 'Historieta Kant vs Hume')" title="Copiar enlace directo">
+                        <span>Copiar Link</span>
+                    </button>
+                </div>
+            </article>
+
+        </main>
+
+        <!-- ESPACIO UNIFICADO PARA COMPARTIR Y ENTREGA -->
+        <section class="portal-share-box" aria-label="Espacio de difusión oficial">
+            <h3>Espacio de Difusión y Entrega Académica</h3>
+            <p>
+                Copia el enlace principal del portal para compartir ambos trabajos de manera conjunta en la plataforma institucional o con la comunidad académica:
+            </p>
+            <div class="share-row-input">
+                <input type="text" id="main-share-input" readonly value="" aria-label="Enlace del portal académico">
+                <button type="button" class="btn-copy-portal" onclick="copiarLinkPortal()">
+                    <span>Copiar Enlace</span>
+                </button>
+            </div>
+            <div class="quick-share-buttons">
+                <a id="btn-wa-portal" href="#" target="_blank" class="chip-btn" title="Compartir vía WhatsApp">
+                    <span>💬 Compartir por WhatsApp</span>
+                </a>
+                <a id="btn-mail-portal" href="#" class="chip-btn" title="Enviar por Correo">
+                    <span>✉️ Enviar por Correo</span>
+                </a>
+                <button type="button" class="chip-btn" onclick="window.print()" title="Imprimir este menú">
+                    <span>🖨️ Imprimir Menú</span>
+                </button>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="portal-footer">
+        <p>
+            Portafolio Académico Digital de <strong>Andrea Carolina Medina Monterroza</strong> · Código: 402537616 · Curso: Antecedentes de la Psicología · Universidad Nacional Abierta y a Distancia (UNAD) · 2026.
+        </p>
+    </footer>
+
+    <!-- NOTIFICACIÓN TOAST -->
+    <div id="toast-portal" class="toast-portal" role="alert" aria-live="polite">
+        ✓ ¡Enlace copiado al portapapeles!
+    </div>
+
+    <!-- LÓGICA DE COMPARTIR -->
+    <script>
+        function getBaseUrl() {
+            if (window.location.protocol === 'file:') {
+                return 'https://historieta-andrea.onrender.com/';
+            }
+            return window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+        }
+
+        function copiarLinkPortal() {
+            const url = window.location.protocol === 'file:' ? 'https://historieta-andrea.onrender.com/' : window.location.href;
+            copiarTexto(url, '✓ ¡Enlace del Portal copiado!');
+        }
+
+        function copiarLinkEspecifico(archivo, nombre) {
+            const base = getBaseUrl();
+            const url = base + archivo;
+            copiarTexto(url, `✓ ¡Enlace a ${nombre} copiado!`);
+        }
+
+        function copiarTexto(texto, feedback) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(texto).then(() => {
+                    showToast(feedback);
+                }).catch(() => fallbackCopy(texto, feedback));
+            } else {
+                fallbackCopy(texto, feedback);
+            }
+        }
+
+        function fallbackCopy(texto, feedback) {
+            const temp = document.createElement('input');
+            temp.value = texto;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            showToast(feedback);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast-portal');
+            if (!toast) return;
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2600);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const portalUrl = window.location.protocol === 'file:' ? 'https://historieta-andrea.onrender.com/' : window.location.href;
+            const input = document.getElementById('main-share-input');
+            if (input) input.value = portalUrl;
+
+            const btnWa = document.getElementById('btn-wa-portal');
+            if (btnWa) {
+                const msg = encodeURIComponent(`Te comparto el Portafolio de Antecedentes de la Psicología por Andrea Medina Monterroza (UNAD): ${portalUrl}`);
+                btnWa.href = `https://api.whatsapp.com/send?text=${msg}`;
+            }
+
+            const btnMail = document.getElementById('btn-mail-portal');
+            if (btnMail) {
+                const subject = encodeURIComponent('Portafolio Académico: Antecedentes de la Psicología (UNAD)');
+                const body = encodeURIComponent(`Hola,\n\nTe comparto el portafolio digital de Antecedentes de la Psicología desarrollado por Andrea Carolina Medina Monterroza para la UNAD:\n\n${portalUrl}\n\nIncluye:\n- El Periódico Histórico Digital: El Cronista del Alma\n- La Historieta Ilustrada: Kant vs Hume\n\nSaludos.`);
+                btnMail.href = `mailto:?subject=${subject}&body=${body}`;
+            }
+        });
+    </script>
+
 </body>
 </html>

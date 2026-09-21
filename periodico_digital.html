@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>El Cronista del Alma — Antecedentes de la Psicología</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --azul-noche: #0D1B33;
+            --azul-medio: #1B2F55;
+            --pergamino: #EDE4CF;
+            --pergamino-oscuro: #D9CDB0;
+            --burdeos: #7A1B2E;
+            --oro: #A8830A;
+            --tinta: #1A140C;
+            --tinta-suave: #3A3028;
+            --blanco-roto: #F7F2E8;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background: var(--pergamino);
+            color: var(--tinta);
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 17px;
+            line-height: 1.65;
+        }
+
+        /* ─── MASTHEAD ─── */
+        .masthead {
+            background: var(--azul-noche);
+            color: var(--pergamino);
+            padding: 0;
+        }
+
+        .masthead-top {
+            border-bottom: 2px solid var(--oro);
+            padding: 10px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            letter-spacing: 0.06em;
+            color: var(--pergamino-oscuro);
+        }
+
+        .masthead-title {
+            text-align: center;
+            padding: 28px 40px 20px;
+        }
+
+        .masthead-title h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(38px, 7vw, 78px);
+            font-weight: 900;
+            margin: 0;
+            line-height: 1;
+            letter-spacing: -0.01em;
+            color: #fff;
+        }
+
+        .masthead-title .ornamento {
+            color: var(--oro);
+            font-size: 22px;
+            letter-spacing: 0.3em;
+            margin: 8px 0;
+            display: block;
+        }
+
+        .masthead-subtitle {
+            font-family: 'EB Garamond', serif;
+            font-style: italic;
+            font-size: clamp(13px, 2.2vw, 18px);
+            color: var(--pergamino-oscuro);
+            margin: 4px 0 0;
+            letter-spacing: 0.03em;
+        }
+
+        .masthead-band {
+            background: var(--burdeos);
+            padding: 10px 40px;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-size: clamp(12px, 1.8vw, 15px);
+            color: var(--pergamino);
+            letter-spacing: 0.08em;
+            font-style: italic;
+        }
+
+        /* ─── CUERPO PRINCIPAL ─── */
+        .cuerpo {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 36px 28px 60px;
+        }
+
+        /* ─── ARTÍCULO PRINCIPAL ─── */
+        .articulo-principal {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 40px;
+            padding-bottom: 36px;
+            border-bottom: 3px solid var(--azul-noche);
+            margin-bottom: 36px;
+        }
+
+        @media (max-width: 720px) {
+            .articulo-principal {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .titular-principal {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(26px, 4.5vw, 46px);
+            font-weight: 700;
+            line-height: 1.15;
+            margin: 0 0 16px;
+            color: var(--azul-noche);
+        }
+
+        .kicker {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--burdeos);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .cuerpo-texto p {
+            margin: 0 0 14px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .cuerpo-texto p:first-child::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            font-weight: 900;
+            float: left;
+            line-height: 0.75;
+            margin: 6px 8px 0 0;
+            color: var(--azul-noche);
+        }
+
+        /* ─── FICHA LATERAL ─── */
+        .ficha-lateral {
+            background: var(--azul-noche);
+            color: var(--pergamino);
+            padding: 24px;
+            border-top: 4px solid var(--oro);
+        }
+
+        .ficha-lateral h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: var(--oro);
+            margin: 0 0 16px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .ficha-autor {
+            border-bottom: 1px solid rgba(168, 131, 10, 0.3);
+            padding-bottom: 14px;
+            margin-bottom: 14px;
+        }
+
+        .ficha-autor:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .ficha-autor .nombre {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .ficha-autor .fechas {
+            font-size: 12px;
+            color: var(--oro);
+            margin-bottom: 4px;
+        }
+
+        .ficha-autor .desc {
+            font-size: 13px;
+            color: var(--pergamino-oscuro);
+            line-height: 1.45;
+        }
+
+        /* ─── SECCIÓN TRES COLUMNAS ─── */
+        .seccion-titulo {
+            font-family: 'Playfair Display', serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--pergamino);
+            background: var(--burdeos);
+            padding: 6px 16px;
+            margin-bottom: 28px;
+            display: inline-block;
+        }
+
+        .tres-columnas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 800px) {
+            .tres-columnas {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 501px) and (max-width: 800px) {
+            .tres-columnas {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .columna h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.25;
+            margin: 0 0 12px;
+            color: var(--azul-noche);
+            border-top: 3px solid var(--burdeos);
+            padding-top: 12px;
+        }
+
+        .columna p {
+            font-size: 15.5px;
+            text-align: justify;
+            hyphens: auto;
+            margin: 0 0 10px;
+            color: var(--tinta-suave);
+        }
+
+        .columna .firma {
+            font-size: 12px;
+            font-style: italic;
+            color: var(--burdeos);
+            border-top: 1px solid var(--pergamino-oscuro);
+            padding-top: 8px;
+            margin-top: 12px;
+        }
+
+        /* ─── CITA DESTACADA ─── */
+        .cita-bloque {
+            background: var(--azul-medio);
+            color: var(--pergamino);
+            padding: 36px 48px;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .cita-bloque::before {
+            content: '\201C';
+            font-family: 'Playfair Display', serif;
+            font-size: 120px;
+            color: var(--oro);
+            opacity: 0.35;
+            position: absolute;
+            top: -10px;
+            left: 16px;
+            line-height: 1;
+        }
+
+        .cita-bloque blockquote {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: clamp(18px, 2.8vw, 26px);
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cita-bloque cite {
+            display: block;
+            margin-top: 14px;
+            font-family: 'EB Garamond', serif;
+            font-style: normal;
+            font-size: 14px;
+            color: var(--oro);
+            letter-spacing: 0.05em;
+        }
+
+        /* ─── LÍNEA DEL TIEMPO ─── */
+        .timeline-wrap {
+            background: var(--blanco-roto);
+            border: 1px solid var(--pergamino-oscuro);
+            padding: 32px;
+            margin: 40px 0;
+        }
+
+        .timeline-titulo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--azul-noche);
+            margin: 0 0 28px;
+            text-align: center;
+            border-bottom: 2px solid var(--oro);
+            padding-bottom: 16px;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 32px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--azul-noche), var(--burdeos), var(--oro));
+            z-index: 0;
+        }
+
+        .hito {
+            text-align: center;
+            padding: 0 8px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hito-punto {
+            width: 16px;
+            height: 16px;
+            background: var(--burdeos);
+            border: 3px solid var(--pergamino);
+            border-radius: 50%;
+            margin: 24px auto 14px;
+            box-shadow: 0 0 0 2px var(--burdeos);
+        }
+
+        .hito-fecha {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--azul-noche);
+            margin-bottom: 6px;
+        }
+
+        .hito-nombre {
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--burdeos);
+            margin-bottom: 4px;
+        }
+
+        .hito-desc {
+            font-size: 12px;
+            color: var(--tinta-suave);
+            line-height: 1.4;
+        }
+
+        /* ─── DOS COLUMNAS ─── */
+        .dos-columnas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 640px) {
+            .dos-columnas {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─── EDITORIAL FINAL ─── */
+        .editorial {
+            background: var(--azul-noche);
+            color: var(--pergamino);
+            padding: 36px 44px;
+            margin-top: 40px;
+        }
+
+        .editorial h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: var(--oro);
+            margin: 0 0 16px;
+        }
+
+        .editorial p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin: 0 0 14px;
+            color: var(--pergamino);
+        }
+
+        /* ─── PIE DE PÁGINA ─── */
+        .pie {
+            background: var(--tinta);
+            color: var(--pergamino-oscuro);
+            padding: 24px 40px;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .pie h4 {
+            color: var(--oro);
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            margin: 0 0 10px;
+        }
+
+        .pie p {
+            margin: 0 0 6px;
+        }
+
+        /* ─── DIVISOR ─── */
+        .divisor {
+            border: none;
+            border-top: 1px solid var(--pergamino-oscuro);
+            margin: 36px 0;
+        }
+
+        .divisor-fuerte {
+            border-top: 3px solid var(--azul-noche);
+        }
+
+        /* ─── ETIQUETA CIENCIAS ─── */
+        .etiqueta {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            margin-right: 6px;
+            margin-bottom: 8px;
+        }
+
+        .etiqueta.social {
+            background: var(--burdeos);
+            color: white;
+        }
+
+        .etiqueta.natural {
+            background: var(--azul-medio);
+            color: white;
+        }
+
+        .etiqueta.ambas {
+            background: var(--oro);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MASTHEAD -->
+    <header class="masthead">
+        <div class="masthead-top">
+            <span>UNAD · Antecedentes de la Psicología · Cód. 402537616</span>
+            <span>Edición Especial · Septiembre de 2026</span>
+            <span>Andrea Carolina Medina Monterroza</span>
+        </div>
+        <div class="masthead-title">
+            <h1>El Cronista del Alma</h1>
+            <span class="ornamento">✦ &nbsp; ✦ &nbsp; ✦</span>
+            <p class="masthead-subtitle">Los antecedentes de la psicología: entre las ciencias sociales y las ciencias
+                naturales</p>
+        </div>
+        <div class="masthead-band">
+            "Para comprender la psicología de hoy, es necesario rastrear las huellas que dejó el pensamiento humano a lo
+            largo de siglos de historia, filosofía y ciencia."
+        </div>
+    </header>
+
+    <!-- CUERPO -->
+    <main class="cuerpo">
+
+        <!-- ARTÍCULO PRINCIPAL -->
+        <article class="articulo-principal">
+            <div>
+                <span class="kicker">Análisis histórico</span>
+                <h1 class="titular-principal">El origen de la psicología: cuando la razón y la naturaleza se encontraron
+                </h1>
+                <div class="cuerpo-texto">
+                    <p>La psicología no nació en un laboratorio ni surgió de un solo pensador iluminado. Su origen es,
+                        en realidad, el resultado de siglos de reflexión filosófica, observación médica y debate sobre
+                        la naturaleza humana. Mucho antes de que Wilhelm Wundt estableciera el primer laboratorio de
+                        psicología experimental en Leipzig en 1879, filósofos griegos, médicos árabes y pensadores
+                        europeos ya se preguntaban por qué los seres humanos sentimos, pensamos, sufrimos y nos
+                        comportamos como lo hacemos.</p>
+                    <p>Comprender este proceso histórico exige reconocer que la psicología se construyó en la
+                        encrucijada de dos grandes tradiciones del conocimiento: las ciencias sociales y las ciencias
+                        naturales. Desde las ciencias sociales —particularmente la filosofía—, llegaron las primeras
+                        preguntas sobre el alma, la emoción y la conducta. Desde las ciencias naturales —la medicina, la
+                        biología y la fisiología—, llegaron las respuestas basadas en la observación del cuerpo y sus
+                        procesos (Castro, 2017).</p>
+                    <p>Esta tensión entre lo social y lo natural, lejos de ser un obstáculo, fue el motor que impulsó el
+                        desarrollo del pensamiento psicológico precientífico. Entender cómo el ser humano piensa y
+                        siente era, al mismo tiempo, una pregunta filosófica sobre la mente y una pregunta biológica
+                        sobre el cuerpo. La psicología heredó ambas preguntas y las integró progresivamente en su objeto
+                        de estudio.</p>
+                </div>
+            </div>
+
+            <aside class="ficha-lateral">
+                <h3>Figuras clave del período precientífico</h3>
+
+                <div class="ficha-autor">
+                    <div class="nombre">Hipócrates de Cos</div>
+                    <div class="fechas">460 – 370 a.C.</div>
+                    <div class="desc"><span class="etiqueta natural">Natural</span>Propuso que el comportamiento humano
+                        dependía de cuatro humores corporales. Padre de la medicina como ciencia natural.</div>
+                </div>
+
+                <div class="ficha-autor">
+                    <div class="nombre">Platón</div>
+                    <div class="fechas">428 – 348 a.C.</div>
+                    <div class="desc"><span class="etiqueta social">Social</span>Concibió el alma tripartita: razón,
+                        emoción y deseo. Sentó las bases del racionalismo en el estudio de la mente.</div>
+                </div>
+
+                <div class="ficha-autor">
+                    <div class="nombre">Aristóteles</div>
+                    <div class="fechas">384 – 322 a.C.</div>
+                    <div class="desc"><span class="etiqueta ambas">Ambas</span>En su obra <em>De Anima</em>, estudió el
+                        alma de forma más empírica. Integró biología y filosofía en el análisis de las emociones.</div>
+                </div>
+
+                <div class="ficha-autor">
+                    <div class="nombre">René Descartes</div>
+                    <div class="fechas">1596 – 1650</div>
+                    <div class="desc"><span class="etiqueta natural">Natural</span>Planteó el dualismo mente-cuerpo. Su
+                        mecanicismo influyó en el enfoque biológico de la psicología.</div>
+                </div>
+
+                <div class="ficha-autor">
+                    <div class="nombre">John Locke</div>
+                    <div class="fechas">1632 – 1704</div>
+                    <div class="desc"><span class="etiqueta social">Social</span>Propuso la mente como <em>tabula
+                            rasa</em>. Fundó el empirismo moderno y la importancia de la experiencia en la formación de
+                        la mente.</div>
+                </div>
+            </aside>
+        </article>
+
+        <!-- SECCIÓN TRES ARTÍCULOS -->
+        <div>
+            <span class="seccion-titulo">Investigación histórica</span>
+        </div>
+
+        <div class="tres-columnas">
+
+            <article class="columna">
+                <h2>La filosofía griega: el primer intento de comprender el alma</h2>
+                <span class="etiqueta social">Ciencias Sociales</span>
+                <p>Cuando los filósofos griegos hablaban del alma (<em>psyche</em>), no se referían exactamente a lo que
+                    hoy entendemos por mente. Para ellos, el alma era el principio que animaba a los seres vivos, lo que
+                    los hacía capaces de moverse, sentir y pensar. Esta concepción, aunque distinta a las definiciones
+                    modernas, fue el punto de partida del pensamiento psicológico.</p>
+                <p>Platón, en diálogos como el <em>Fedón</em> y la <em>República</em>, propuso que el alma humana estaba
+                    compuesta por tres partes: la razón, el espíritu y el deseo. Esta división anticipa de manera
+                    sorprendente las divisiones que la psicología haría más tarde entre lo cognitivo, lo emocional y lo
+                    motivacional (Castro, 2017). Para Platón, el conocimiento verdadero provenía de la razón, no de los
+                    sentidos, estableciendo así una tradición racionalista que marcaría siglos de pensamiento
+                    filosófico.</p>
+                <p>Aristóteles, discípulo de Platón pero con una visión más naturalista, escribió el <em>De Anima</em>,
+                    considerada la primera obra sistemática sobre psicología. A diferencia de su maestro, Aristóteles
+                    observaba el comportamiento de los seres vivos de forma más empírica, conectando el alma con las
+                    funciones biológicas del organismo. Esta perspectiva lo acercó más a las ciencias naturales que a la
+                    filosofía pura.</p>
+                <p class="firma">Fuente: Castro (2017). <em>Historia de la psicología</em>. UNED.</p>
+            </article>
+
+            <article class="columna">
+                <h2>Sentir en la Grecia antigua: emociones antes de la psicología</h2>
+                <span class="etiqueta social">Ciencias Sociales</span>
+                <p>Una de las contribuciones más significativas del mundo griego al pensamiento psicológico fue su
+                    análisis de las emociones. Los griegos no tenían un concepto equivalente al término moderno
+                    "emoción", pero sí contaban con un rico vocabulario para describir los estados afectivos del alma
+                    humana.</p>
+                <p>Términos como <em>thymos</em> (impulso vital, fuerza emocional), <em>pathos</em> (sufrimiento, afecto
+                    intenso) y <em>eros</em> (deseo) configuraban una comprensión de la vida afectiva que iba mucho más
+                    allá de la simple alegría o tristeza. Para los griegos, las emociones no eran irracionales ni
+                    opuestas al pensamiento: eran parte constitutiva de la experiencia humana y, por tanto, dignos de
+                    estudio filosófico y literario.</p>
+                <p>Aristóteles, en su <em>Retórica</em>, definió los <em>pathē</em> como estados que transforman a las
+                    personas y afectan sus juicios. Esta idea resulta sorprendentemente moderna: las emociones influyen
+                    en cómo percibimos el mundo y tomamos decisiones, algo que la psicología cognitiva contemporánea
+                    confirmaría siglos después (Fernández & Buis, 2022).</p>
+                <p>Esta aproximación griega a la afectividad muestra que las ciencias sociales —en este caso, la
+                    filosofía y la literatura— fueron las primeras en documentar el mundo interior del ser humano, mucho
+                    antes de que existieran los instrumentos científicos para medirlo.</p>
+                <p class="firma">Fuente: Fernández & Buis (2022). <em>Sentir y emocionar(se)</em>. Circe de Clásicos y
+                    Modernos.</p>
+            </article>
+
+            <article class="columna">
+                <h2>Biología y psicología: una alianza que viene de lejos</h2>
+                <span class="etiqueta natural">Ciencias Naturales</span>
+                <p>Mientras los filósofos reflexionaban sobre el alma desde una perspectiva social e intelectual, los
+                    médicos griegos comenzaban a observar que el comportamiento humano tenía bases físicas. Hipócrates,
+                    considerado el padre de la medicina occidental, propuso que los estados de ánimo y el carácter
+                    dependían del equilibrio entre cuatro fluidos corporales: la sangre, la bilis amarilla, la bilis
+                    negra y la flema.</p>
+                <p>Esta teoría humoral, aunque hoy superada, fue un paso fundamental: por primera vez, se buscaban
+                    explicaciones biológicas para fenómenos que antes solo se explicaban espiritualmente. La melancolía,
+                    por ejemplo, ya no era solo un castigo divino, sino la consecuencia de un exceso de bilis negra.
+                    Este cambio de perspectiva abrió el camino para que la ciencia natural se ocupara del comportamiento
+                    humano.</p>
+                <p>Esta relación entre biología y psicología no es algo del pasado. Roncancio-Henao y Gutiérrez (2023)
+                    analizan cómo ambas disciplinas han construido históricamente una relación de integración
+                    progresiva, desde las primeras teorías fisiológicas del comportamiento hasta la neurociencia
+                    contemporánea. La psicología nunca abandonó por completo sus raíces biológicas; las integró en una
+                    visión más compleja del ser humano.</p>
+                <p class="firma">Fuente: Roncancio-Henao & Gutiérrez (2023). <em>Integración y consolidación
+                        disciplinar</em>. Interdisciplinaria.</p>
+            </article>
+
+        </div>
+
+        <!-- CITA DESTACADA -->
+        <div class="cita-bloque">
+            <blockquote>
+                "La psicología no puede entenderse únicamente como una ciencia del presente. Sus raíces filosóficas,
+                médicas y humanistas la convierten en una disciplina que nació en el cruce entre el pensamiento racional
+                y la observación del cuerpo humano."
+            </blockquote>
+            <cite>— Reflexión a partir de Castro (2017), Fernández & Buis (2022) y Roncancio-Henao & Gutiérrez
+                (2023)</cite>
+        </div>
+
+        <!-- LÍNEA DEL TIEMPO -->
+        <div class="timeline-wrap">
+            <h2 class="timeline-titulo">Línea del Tiempo: Pioneros del Pensamiento Psicológico Precientífico</h2>
+            <div class="timeline">
+
+                <div class="hito">
+                    <div class="hito-punto"></div>
+                    <div class="hito-fecha">~460 a.C.</div>
+                    <div class="hito-nombre">Hipócrates</div>
+                    <div class="hito-desc">Teoría de los cuatro humores: primera explicación biológica del temperamento
+                    </div>
+                </div>
+
+                <div class="hito">
+                    <div class="hito-punto"></div>
+                    <div class="hito-fecha">~428 a.C.</div>
+                    <div class="hito-nombre">Platón</div>
+                    <div class="hito-desc">Alma tripartita: razón, espíritu y deseo. Racionalismo y dualismo alma-cuerpo
+                    </div>
+                </div>
+
+                <div class="hito">
+                    <div class="hito-punto"></div>
+                    <div class="hito-fecha">~384 a.C.</div>
+                    <div class="hito-nombre">Aristóteles</div>
+                    <div class="hito-desc"><em>De Anima</em>: primer tratado sistemático sobre la psique humana</div>
+                </div>
+
+                <div class="hito">
+                    <div class="hito-punto"></div>
+                    <div class="hito-fecha">~1596</div>
+                    <div class="hito-nombre">Descartes</div>
+                    <div class="hito-desc">Dualismo mente-cuerpo. Mecanicismo y el papel del cerebro en el pensamiento
+                    </div>
+                </div>
+
+                <div class="hito">
+                    <div class="hito-punto"></div>
+                    <div class="hito-fecha">~1632</div>
+                    <div class="hito-nombre">John Locke</div>
+                    <div class="hito-desc"><em>Tabula rasa</em>: la mente como producto de la experiencia sensible</div>
+                </div>
+
+                <div class="hito">
+                    <div class="hito-punto"></div>
+                    <div class="hito-fecha">~1711</div>
+                    <div class="hito-nombre">David Hume</div>
+                    <div class="hito-desc">Asociacionismo: las ideas se conectan por semejanza, contigüidad y causalidad
+                    </div>
+                </div>
+
+                <div class="hito">
+                    <div class="hito-punto"></div>
+                    <div class="hito-fecha">1879</div>
+                    <div class="hito-nombre">Wilhelm Wundt</div>
+                    <div class="hito-desc">Funda el primer laboratorio de psicología experimental. Nace la psicología
+                        científica</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- DOS COLUMNAS: SÍNTESIS -->
+        <div>
+            <span class="seccion-titulo">Análisis y síntesis</span>
+        </div>
+
+        <div class="dos-columnas">
+            <article>
+                <h2
+                    style="font-family:'Playfair Display',serif;font-size:21px;color:var(--azul-noche);border-top:3px solid var(--burdeos);padding-top:12px;margin:0 0 14px;">
+                    La psicología como ciencia social: el legado de la filosofía
+                </h2>
+                <p style="text-align:justify;hyphens:auto;color:var(--tinta-suave);">El estudio de la mente humana fue,
+                    durante siglos, una tarea de la filosofía. Preguntas como ¿qué es el alma?, ¿de dónde vienen
+                    nuestras ideas?, ¿por qué amamos u odiamos? fueron formuladas mucho antes de que existiera un método
+                    científico para responderlas. Esta herencia filosófica hizo de la psicología, en su origen, una
+                    ciencia profundamente social: interesada en el ser humano como ser pensante, emocional y relacional.
+                </p>
+                <p style="text-align:justify;hyphens:auto;color:var(--tinta-suave);">El estudio de las emociones en la
+                    Grecia antigua, analizado por Fernández y Buis (2022), ilustra perfectamente esta dimensión social.
+                    Los textos filosóficos y literarios griegos ofrecían una fenomenología del mundo afectivo humano que
+                    anticipó, siglos antes, los debates de la psicología moderna sobre el papel de las emociones en la
+                    cognición y la conducta.</p>
+            </article>
+
+            <article>
+                <h2
+                    style="font-family:'Playfair Display',serif;font-size:21px;color:var(--azul-noche);border-top:3px solid var(--azul-medio);padding-top:12px;margin:0 0 14px;">
+                    La psicología como ciencia natural: el legado de la medicina
+                </h2>
+                <p style="text-align:justify;hyphens:auto;color:var(--tinta-suave);">Paralelamente, la tradición médica
+                    ofreció a la psicología sus fundamentos como ciencia natural. Desde Hipócrates hasta Descartes,
+                    pasando por Galeno y las escuelas árabes medievales, el comportamiento humano fue estudiado en
+                    relación con el cuerpo, los nervios, el cerebro y los fluidos corporales. Esta tradición estableció
+                    que la conducta y los estados mentales tenían correlatos físicos observables.</p>
+                <p style="text-align:justify;hyphens:auto;color:var(--tinta-suave);">Como señalan Roncancio-Henao y
+                    Gutiérrez (2023), la integración entre biología y psicología no ha sido lineal ni libre de
+                    tensiones, pero sí constante. La psicología contemporánea reconoce que no puede comprender al ser
+                    humano ignorando su substrato biológico, del mismo modo que no puede ignorar su contexto social,
+                    cultural e histórico.</p>
+            </article>
+        </div>
+
+        <!-- EDITORIAL FINAL -->
+        <section class="editorial">
+            <h2>Reflexión editorial: ¿Por qué importa conocer los antecedentes de la psicología?</h2>
+            <p>Estudiar los antecedentes históricos de la psicología no es un ejercicio meramente académico. Es un acto
+                de reconocimiento: entender que cada concepto que hoy usamos —emoción, conducta, percepción,
+                aprendizaje— tiene detrás una historia de siglos de preguntas y respuestas, de debates entre filósofos y
+                científicos, entre quienes creían que la mente era espíritu puro y quienes la veían como función del
+                cerebro.</p>
+            <p>La psicología surgió precisamente porque ninguna de esas dos visiones era suficiente por sí sola.
+                Necesitó tanto la profundidad reflexiva de las ciencias sociales como el rigor empírico de las ciencias
+                naturales para convertirse en lo que es hoy: una disciplina plural, compleja y en constante evolución.
+            </p>
+            <p>Conocer estos antecedentes nos hace mejores estudiantes de psicología, más conscientes de que las grandes
+                preguntas sobre el ser humano no tienen respuestas simples, y que el conocimiento siempre se construye
+                en diálogo con el pasado.</p>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+        <h4>Referencias bibliográficas (APA 7.ª edición)</h4>
+        <p>Castro, J. (2017). <em>Historia de la psicología</em>. UNED - Universidad Nacional de Educación a Distancia.
+            https://elibro-net.bibliotecavirtual.unad.edu.co/es/lc/unad/titulos/103058</p>
+        <p>Fernández, C. N., & Buis, E. J. (2022). Sentir y emocionar(se): aproximaciones al estudio de la afectividad
+            en la Grecia antigua. <em>Circe de Clásicos y Modernos, 26</em>(2), 15–44.
+            https://research-ebsco-com.bibliotecavirtual.unad.edu.co/linkprocessor/plink?id=0ae09296-9f08-3310-a2ab-9897eb22ed23
+        </p>
+        <p>Roncancio-Henao, L., & Gutiérrez, G. (2023). Integración y consolidación disciplinar en la biología y la
+            psicología. Una perspectiva comparada. <em>Interdisciplinaria: Revista de Psicología y Ciencias Afines,
+                40</em>(2), 7–22. https://doi-org.bibliotecavirtual.unad.edu.co/10.16888/interd.2023.40.2.1</p>
+        <hr style="border-color:rgba(168,131,10,0.3);margin:16px 0;">
+        <p style="color:#999;">Periódico Histórico Digital elaborado por Andrea Carolina Medina Monterroza · Curso
+            Antecedentes de la Psicología (402537616) · UNAD · 2026</p>
+    </footer>
+
+</body>
+
+</html>

@@ -180,7 +180,7 @@
 
         .newspaper-name {
             font-family: var(--gothic), var(--headline);
-            font-size: clamp(48px, 6.2vw, 84px);
+            font-size: clamp(28px, 6.5vw, 84px);
             font-weight: 400;
             color: var(--ink-black);
             line-height: 1;
@@ -248,8 +248,8 @@
         }
 
         .section-nav a:hover {
-            color: var(--accent-crimson);
-            border-bottom: 2px solid var(--accent-crimson);
+            color: var(--unad-azul);
+            border-bottom: 2px solid var(--unad-amarillo);
         }
 
         /* ─── LEYENDA EDITORIAL DE PORTADA ─── */
@@ -1106,6 +1106,486 @@
             border-color: #128c7e;
         }
 
+        /* ══════════════════════════════════════════════════════════════════════
+           OPTIMIZACIONES RESPONSIVAS DE ALTO NIVEL PARA DISPOSITIVOS MÓVILES
+           ══════════════════════════════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            body {
+                padding: 0 16px 40px;
+                font-size: 16px;
+                line-height: 1.62;
+            }
+
+            /* Barra Institucional Superior */
+            .top-utility-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                padding: 10px 14px;
+                font-size: 10.5px;
+            }
+
+            .top-utility-bar > div:last-child {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            /* Cabecera & Logotipo */
+            .masthead {
+                padding: 12px 0 6px;
+            }
+
+            .masthead-motto {
+                font-size: 11px;
+                margin-bottom: 2px;
+            }
+
+            .newspaper-name {
+                font-size: clamp(26px, 8.2vw, 42px);
+                line-height: 1.06;
+                margin: 4px 0 6px;
+                word-break: normal;
+            }
+
+            .masthead-tagline {
+                font-size: 9.5px;
+                letter-spacing: 0.1em;
+                line-height: 1.35;
+            }
+
+            /* Barra de Fecha y Edición */
+            .edition-bar {
+                flex-direction: column;
+                gap: 4px;
+                text-align: center;
+                padding: 6px 0;
+                font-size: 10px;
+                letter-spacing: 0.05em;
+            }
+
+            /* Navegación Temática con scroll horizontal fluido y touch nativo */
+            .section-nav {
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding: 8px 2px;
+                margin-bottom: 20px;
+                gap: 14px;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+
+            .section-nav::-webkit-scrollbar {
+                display: none;
+            }
+
+            .section-nav a {
+                white-space: nowrap;
+                flex-shrink: 0;
+                font-size: 10.5px;
+                padding: 3px 2px;
+            }
+
+            /* Portada y Titular Principal */
+            .frontpage-banner {
+                font-size: 14.5px;
+                padding-bottom: 8px;
+                margin-bottom: 20px;
+                line-height: 1.4;
+            }
+
+            .main-headline-container {
+                margin-bottom: 20px;
+                padding-bottom: 16px;
+            }
+
+            .lead-kicker {
+                font-size: 10.5px;
+                letter-spacing: 0.14em;
+                margin-bottom: 8px;
+            }
+
+            .main-title {
+                font-size: clamp(23px, 6.4vw, 32px);
+                line-height: 1.15;
+                margin-bottom: 10px;
+            }
+
+            .main-deck {
+                font-size: 15.5px;
+                line-height: 1.45;
+                margin-bottom: 12px;
+            }
+
+            .byline-block {
+                font-size: 10px;
+                padding-top: 8px;
+            }
+
+            /* Barra de Compartir NYT Móvil */
+            .nyt-share-bar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+                padding: 10px 0;
+                margin: 16px 0 22px;
+            }
+
+            .share-label {
+                text-align: center;
+                margin-right: 0;
+                font-size: 10px;
+            }
+
+            .share-actions {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 6px;
+                width: 100%;
+            }
+
+            .nyt-btn {
+                justify-content: center;
+                padding: 8px 6px;
+                font-size: 9.5px;
+                text-align: center;
+            }
+
+            /* Layout de Portada y Columnas Móvil (Colapso a lectura lineal continua) */
+            .front-layout {
+                display: flex;
+                flex-direction: column;
+                gap: 26px;
+                padding-bottom: 26px;
+                margin-bottom: 28px;
+            }
+
+            .lead-text-columns {
+                columns: 1 !important;
+                column-gap: 0;
+                text-align: left;
+                font-size: 16px;
+                line-height: 1.62;
+                hyphens: none;
+            }
+
+            .lead-text-columns p {
+                text-indent: 0;
+                margin-bottom: 14px;
+            }
+
+            .lead-text-columns p:first-of-type::first-letter {
+                font-size: 3.6em;
+                line-height: 0.85;
+                margin: 2px 8px 0 0;
+            }
+
+            /* Dossier Lateral Móvil */
+            .sidebar-dossier {
+                padding: 18px 14px;
+                outline-offset: 2px;
+            }
+
+            .figure-name {
+                font-size: 15px;
+            }
+
+            .figure-desc {
+                font-size: 13px;
+                line-height: 1.45;
+            }
+
+            /* Separador de Sección */
+            .section-separator {
+                margin: 28px 0 20px;
+            }
+
+            .section-separator h2 {
+                font-size: 10.5px;
+                letter-spacing: 0.12em;
+            }
+
+            /* Tres Columnas de Investigación Móvil */
+            .three-column-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                padding-bottom: 28px;
+            }
+
+            .newspaper-col {
+                border-right: none !important;
+                border-bottom: 1px solid var(--rule-hairline);
+                padding-right: 0;
+                padding-bottom: 20px;
+            }
+
+            .newspaper-col:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            .newspaper-col h3 {
+                font-size: 20px;
+                line-height: 1.22;
+                margin-bottom: 10px;
+            }
+
+            .newspaper-col p {
+                text-align: left;
+                font-size: 15.5px;
+                line-height: 1.6;
+                text-indent: 0;
+                margin-bottom: 12px;
+            }
+
+            /* Cita Destacada (Pullquote) */
+            .editorial-pullquote {
+                padding: 20px 16px 18px 24px;
+                margin: 30px 0;
+            }
+
+            .editorial-pullquote::before {
+                font-size: 46px;
+                top: 10px;
+                left: 4px;
+            }
+
+            .editorial-pullquote blockquote {
+                font-size: 17px;
+                line-height: 1.42;
+            }
+
+            .editorial-pullquote cite {
+                font-size: 10px;
+                margin-top: 10px;
+            }
+
+            /* Línea de Tiempo Móvil (Infografía de pasos verticales continuos) */
+            .timeline-section {
+                padding: 20px 14px;
+                margin: 30px 0;
+            }
+
+            .timeline-header h3 {
+                font-size: 21px;
+            }
+
+            .timeline-header p {
+                font-size: 13px;
+            }
+
+            .timeline-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin-left: 6px;
+            }
+
+            .timeline-milestone {
+                border-top: none;
+                border-left: 3px solid var(--unad-azul);
+                padding-top: 0;
+                padding-left: 14px;
+                position: relative;
+            }
+
+            .timeline-milestone::before {
+                content: '';
+                position: absolute;
+                left: -6.5px;
+                top: 4px;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: var(--unad-amarillo);
+                border: 2px solid var(--unad-azul);
+            }
+
+            .milestone-year {
+                font-size: 16px;
+                margin-bottom: 2px;
+            }
+
+            .milestone-author {
+                font-size: 12px;
+                margin-bottom: 3px;
+            }
+
+            .milestone-text {
+                font-size: 13px;
+                line-height: 1.42;
+            }
+
+            /* Debate Epistemológico (Dos Columnas a Pila Vertical) */
+            .two-column-analysis {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                padding-bottom: 26px;
+                margin-bottom: 28px;
+            }
+
+            .analysis-col {
+                padding-right: 0;
+            }
+
+            .analysis-col:first-child {
+                border-right: none !important;
+                border-bottom: 1px solid var(--rule-hairline);
+                padding-right: 0;
+                padding-bottom: 22px;
+            }
+
+            .analysis-col h3 {
+                font-size: 20px;
+                line-height: 1.25;
+                margin-bottom: 10px;
+            }
+
+            .analysis-col p {
+                text-align: left;
+                font-size: 15.5px;
+                line-height: 1.6;
+                text-indent: 0;
+                margin-bottom: 12px;
+            }
+
+            /* Sección Editorial */
+            .editorial-section {
+                padding: 24px 16px 18px;
+                margin-bottom: 30px;
+            }
+
+            .editorial-section::before {
+                left: 16px;
+                font-size: 10px;
+            }
+
+            .editorial-section h2 {
+                font-size: 21px;
+                line-height: 1.25;
+                margin-bottom: 12px;
+            }
+
+            .editorial-body {
+                columns: 1 !important;
+                column-gap: 0;
+                text-align: left;
+                font-size: 15.5px;
+                line-height: 1.62;
+                hyphens: none;
+            }
+
+            .editorial-body p {
+                text-indent: 0;
+                margin-bottom: 12px;
+            }
+
+            .editorial-signature {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+                font-size: 10px;
+            }
+
+            /* Hub de Compartir Móvil */
+            .share-hub-card {
+                padding: 22px 14px;
+                margin: 30px 0 20px;
+            }
+
+            .share-hub-card h3 {
+                font-size: 20px;
+            }
+
+            .share-hub-card p {
+                font-size: 13.5px;
+                margin-bottom: 14px;
+            }
+
+            .share-input-group {
+                flex-direction: column;
+                gap: 8px;
+                box-shadow: none;
+            }
+
+            .share-input-group input {
+                border: 1px solid var(--unad-azul);
+                border-radius: 4px;
+                padding: 11px 12px;
+                font-size: 12.5px;
+                text-align: center;
+                width: 100%;
+            }
+
+            .btn-copy-main {
+                width: 100%;
+                justify-content: center;
+                border-radius: 4px;
+                padding: 12px;
+                font-size: 11px;
+            }
+
+            .share-buttons-row {
+                flex-direction: column;
+                width: 100%;
+                gap: 8px;
+            }
+
+            .share-chip {
+                width: 100%;
+                justify-content: center;
+                padding: 11px;
+                font-size: 11px;
+                border-radius: 4px;
+            }
+
+            /* Botón Flotante Móvil */
+            .supplement-pill {
+                bottom: 12px;
+                right: 12px;
+                padding: 8px 12px;
+                font-size: 10.5px;
+                border-radius: 20px;
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+            }
+
+            /* Pie de Página / Referencias */
+            .newspaper-footer {
+                padding-top: 18px;
+                font-size: 12.5px;
+            }
+
+            .apa-reference {
+                padding-left: 14px;
+                text-indent: -14px;
+                font-size: 12px;
+                line-height: 1.45;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Pantallas muy pequeñas (Smartphones de < 420px) */
+        @media (max-width: 420px) {
+            body {
+                padding: 0 12px 34px;
+            }
+
+            .share-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .newspaper-name {
+                font-size: 25px;
+            }
+
+            .main-title {
+                font-size: 21px;
+            }
+        }
+
         /* ─── ESTILOS DE IMPRESIÓN OFICIAL ─── */
         @media print {
             body {
@@ -1130,7 +1610,7 @@
             <span>Universidad Nacional Abierta y a Distancia (UNAD)</span> · 
             <span>Escuela de Ciencias Sociales, Artes y Humanidades</span>
         </div>
-        <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+        <div class="utility-links" style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
             <span>Curso: Antecedentes de la Psicología (402537616)</span> · 
             <a href="index.html" title="Regresar al Menú Principal del Portal">
                 <span>🏠 Menú Inicial</span>
